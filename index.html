@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ✨</title>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#000000,#0d0d0d,#1a1a1a);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    max-width:900px;
+    text-align:center;
+    animation:fadeIn 1.5s ease;
+    z-index:2;
+}
+
+.cake{
+    font-size:90px;
+    margin-bottom:10px;
+    animation:floatIcon 3s ease-in-out infinite;
+}
+
+h1{
+    font-size:4rem;
+    color:#FFD700;
+    letter-spacing:4px;
+    text-shadow:
+        0 0 10px rgba(255,215,0,.5),
+        0 0 20px rgba(255,215,0,.3);
+}
+
+.subtitle{
+    margin-top:10px;
+    color:#d4d4d4;
+    font-size:1.1rem;
+    letter-spacing:1px;
+    margin-bottom:35px;
+}
+
+.card{
+    background:rgba(255,215,0,.05);
+    border:1px solid rgba(255,215,0,.15);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:40px;
+    box-shadow:0 0 40px rgba(255,215,0,.12);
+}
+
+.card h2{
+    color:#FFD700;
+    font-weight:600;
+    margin-bottom:15px;
+    text-transform:lowercase;
+}
+
+.btn{
+    background:#FFD700;
+    color:#000;
+    border:none;
+    padding:15px 35px;
+    border-radius:999px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 0 30px rgba(255,215,0,.5);
+}
+
+.message{
+    display:none;
+    text-align:left;
+    margin-top:30px;
+    line-height:2;
+    color:#f5f5f5;
+    font-size:1.03rem;
+    animation:fadeIn 1.2s ease;
+}
+
+.highlight{
+    color:#FFD700;
+    font-weight:600;
+}
+
+.balloon{
+    position:fixed;
+    font-size:50px;
+    opacity:.7;
+    animation:float 12s linear infinite;
+}
+
+.balloon:nth-child(1){
+    left:5%;
+    animation-duration:12s;
+}
+
+.balloon:nth-child(2){
+    left:85%;
+    animation-duration:15s;
+}
+
+.balloon:nth-child(3){
+    left:50%;
+    animation-duration:13s;
+}
+
+@keyframes float{
+    from{
+        bottom:-100px;
+    }
+    to{
+        bottom:120%;
+    }
+}
+
+@keyframes floatIcon{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    .cake{
+        font-size:70px;
+    }
+
+    .card{
+        padding:25px;
+    }
+
+    .message{
+        font-size:.95rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="balloon">🖤</div>
+<div class="balloon">✨</div>
+<div class="balloon">🎂</div>
+
+<div class="container">
+
+    <div class="cake">🎂✨</div>
+
+    <h1>HAPPY BIRTHDAY</h1>
+
+    <p class="subtitle">
+        born to be blessed, destined to win
+    </p>
+
+    <div class="card">
+
+        <h2>your birthday surprise is here </h2>
+
+        <button class="btn" onclick="showMessage()">
+            Open it 
+        </button>
+
+        <div class="message" id="birthdayMessage">
+
+            <p>
+
+            <span class="highlight">HAPPY BIRTHDAY! ENGR!🎂</span>
+            <br><br>
+
+            I pray that this year will be filled with answered prayers,
+            breakthroughs, and countless blessings para sa'yo.
+
+            Sana puspusan ka ni Lord ng wisdom, strength, at good health ngayong
+            review season mo. I know hindi madali ang journey, pero seeing how
+            responsible, hardworking, and kind you are makes me believe that
+            God has great things prepared for you.
+
+            <br><br>
+
+            Sana ibigay na rin ni Lord sa tamang panahon ang mga hinihiling at
+            pinagdarasal mo. Konting-konti na lang, malapit ka na sa mga goals.
+
+            Keep being a good son, kuya, friend, and someday,
+            a ka-ibigan to ur person HAHAHA.
+
+            <br><br>
+
+            Isa ako sa mga natutuwa sa lahat ng achievements mo, and honestly
+            nakaka-inspire ka rin.
+
+            Seeing you work hard and stay committed reminds me that with God's
+            grace, makakaya ko rin ang mga pangarap ko.
+
+            <br><br>
+
+            Super proud of you.
+
+            Deserve mo lahat ng blessings na dumarating at darating pa sa buhay mo.
+
+            Enjoy your day, celebrate God's goodness, and don't forget to rest
+            din.
+
+            <br><br>
+
+            God bless you always. 🩷✨
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function launchConfetti() {
+
+    const duration = 9000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+
+        confetti({
+            particleCount: 4,
+            angle: 60,
+            spread: 80,
+            origin: { x: 0 },
+            colors: ['#FFD700','#ffffff']
+        });
+
+        confetti({
+            particleCount: 4,
+            angle: 120,
+            spread: 80,
+            origin: { x: 1 },
+            colors: ['#FFD700','#ffffff']
+        });
+
+        if(Date.now() < end){
+            requestAnimationFrame(frame);
+        }
+
+    })();
+}
+
+function showMessage(){
+
+    document.getElementById("birthdayMessage").style.display = "block";
+
+    launchConfetti();
+
+    confetti({
+        particleCount:250,
+        spread:180,
+        origin:{ y:0.6 },
+        colors:['#FFD700','#ffffff']
+    });
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:'smooth'
+    });
+}
+
+window.onload = () => {
+
+    confetti({
+        particleCount:150,
+        spread:120,
+        origin:{ y:0.5 },
+        colors:['#FFD700','#ffffff']
+    });
+
+};
+
+</script>
+
+</body>
+
